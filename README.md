@@ -4,10 +4,13 @@ Production-ready Minecraft Java Edition server running on pbox via Docker Compos
 
 - **Engine:** PaperMC (high-performance vanilla-compatible Java Edition)
 - **Port:** `25565` (TCP/UDP)
-- **Public FQDNs & Connection Addresses:**
-  - `daq.se` or `mc.daq.se` (shortest, 6 letters)
-  - `blpk.cc` or `mc.blpk.cc`
-  - `mc.hostbun.cc`
+- **Public Domains & Fun Hostnames:**
+  - `grisch.nu` (or `mc.grisch.nu`)
+  - `lall.se` (or `mc.lall.se`)
+  - `pcplay.se` (or `mc.pcplay.se`)
+  - `gaymasen.se` (or `mc.gaymasen.se`)
+  - `daq.se` (or `mc.daq.se`)
+  - `blpk.cc` (or `mc.blpk.cc`)
 - **Internal / Mesh Reachability:**
   - Tailscale mesh: `100.64.0.2:25565` or `pbox.mesh.hostbun.cc:25565`
   - Localhost / LAN: `127.0.0.1:25565` or `pbox:25565`
