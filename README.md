@@ -4,8 +4,12 @@ Production-ready Minecraft Java Edition server running on pbox via Docker Compos
 
 - **Engine:** PaperMC (high-performance vanilla-compatible Java Edition)
 - **Port:** `25565` (TCP/UDP)
-- **Network Reachability:**
-  - Tailscale mesh: `100.64.0.2:25565` (accessible from pmac, phones, laptops, and all servers)
+- **Public FQDNs & Connection Addresses:**
+  - `daq.se` or `mc.daq.se` (shortest, 6 letters)
+  - `blpk.cc` or `mc.blpk.cc`
+  - `mc.hostbun.cc`
+- **Internal / Mesh Reachability:**
+  - Tailscale mesh: `100.64.0.2:25565` or `pbox.mesh.hostbun.cc:25565`
   - Localhost / LAN: `127.0.0.1:25565` or `pbox:25565`
 - **Memory Allocation:** 2GB Initial / 4GB Max (Aikar garbage collection flags enabled)
 - **Data Persistence:** `./data` volume mount
