@@ -30,7 +30,14 @@ services:
       ALLOW_FLIGHT: "${ALLOW_FLIGHT:-false}"
       ENABLE_STATUS: "true"
       SYNC_CHUNK_WRITES: "true"
-      MODRINTH_PROJECTS: "simple-voice-chat"
+      MODRINTH_PROJECTS: |
+        simple-voice-chat
+        custom-join-messages
+      # Repo is the source of truth for /plugins config: always overwrite on start.
+      PLUGINS_SYNC_UPDATE: "false"
+    configs:
+      - source: join-messages-chat
+        target: /plugins/CustomJoinMessages/messages/chat.yml
     volumes:
       - ./data:/data
     healthcheck:
@@ -39,3 +46,52 @@ services:
       timeout: 10s
       retries: 3
       start_period: 90s
+
+# Join instructions for proximity voice chat. The image copies /plugins into /data/plugins on start.
+configs:
+  join-messages-chat:
+    content: |
+      # Toggles whether chat messages should be sent.
+      Enabled: true
+
+      Public:
+        Send-To-Console: true
+        First-Join:
+          1:
+            Permission: cjm.default
+            Radius: -1
+            Max-Players: -1
+            Messages:
+              1:
+                - "&e%name% joined the game for the first time"
+        Join:
+          1:
+            Permission: cjm.default
+            Messages:
+              1:
+                - "&e%name% joined the game"
+        Quit:
+          1:
+            Permission: cjm.default
+            Messages:
+              1:
+                - "&e%name% left the game"
+
+      Private:
+        First-Join:
+          1:
+            Permission: cjm.default
+            Messages:
+              1:
+                - "&6&l[Voice] &eThis server has PROXIMITY VOICE CHAT!"
+                - "&7To hear and talk, install the &aSimple Voice Chat &7mod (Fabric, 26.3):"
+                - "&bhttps://modrinth.com/mod/simple-voice-chat"
+                - "&7Easiest: get the &fModrinth App &7(modrinth.com/app), search &fSimple Voice Chat&7, click &fInstall&7, play that profile."
+                - "&7In game: &fV &7= settings, &fCaps Lock &7= push-to-talk, &fG &7= groups."
+        Join:
+          1:
+            Permission: cjm.default
+            Messages:
+              1:
+                - "&6&l[Voice] &7Proximity voice chat is on. No voice? Get the &aSimple Voice Chat &7mod:"
+                - "&bhttps://modrinth.com/mod/simple-voice-chat &7(press &fV &7in game)"
