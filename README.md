@@ -4,6 +4,7 @@ Production-ready Minecraft Java Edition server running on pbox via Docker Compos
 
 - **Engine:** PaperMC (high-performance vanilla-compatible Java Edition)
 - **Port:** `25565` (TCP/UDP)
+- **Proximity voice chat:** [Simple Voice Chat](https://modrinth.com/plugin/simple-voice-chat) plugin, auto-installed from Modrinth (`MODRINTH_PROJECTS`). Voice uses UDP `24454`. Each player needs the Simple Voice Chat client mod (Fabric/NeoForge/Forge); press `V` in-game for settings.
 - **Public Domains & Fun Hostnames:**
   - `grisch.nu` (or `mc.grisch.nu`)
   - `lall.se` (or `mc.lall.se`)

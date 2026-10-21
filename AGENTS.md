@@ -19,4 +19,5 @@ Docker Compose-managed PaperMC server running on `pbox` exposing standard Java p
 - **Do not commit world data or secrets.** World data lives in `./data/` and credentials live in `.env`, both gitignored.
 - **Port 25565 is the SSOT.** Do not remap default Minecraft port unless explicitly instructed.
 - **Tailscale reachability:** The server binds `0.0.0.0:25565` and is reachable across the Tailscale mesh at `100.64.0.2:25565`.
+- **Voice chat:** Simple Voice Chat plugin via `MODRINTH_PROJECTS`; UDP `24454` published on pbox and forwarded from hostbun (`minecraft-voice-forward.service`).
 - **Memory safety:** Default is 4GB heap (`MEMORY=4G`) with Aikar tuning flags enabled.
