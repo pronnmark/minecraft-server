@@ -33,11 +33,14 @@ services:
       MODRINTH_PROJECTS: |
         simple-voice-chat
         custom-join-messages
+        voiceserver
       # Repo is the source of truth for /plugins config: always overwrite on start.
       PLUGINS_SYNC_UPDATE: "false"
     configs:
       - source: join-messages-chat
         target: /plugins/CustomJoinMessages/messages/chat.yml
+      - source: voiceserver-config
+        target: /plugins/VoiceServer/config.yml
     volumes:
       - ./data:/data
     healthcheck:
@@ -47,7 +50,7 @@ services:
       retries: 3
       start_period: 90s
 
-# Join instructions for proximity voice chat. The image copies /plugins into /data/plugins on start.
+# Join instructions for proximity voice chat, and one voice group everyone auto-joins. The image copies /plugins into /data/plugins on start.
 configs:
   join-messages-chat:
     content: |
@@ -87,6 +90,7 @@ configs:
                 - "&7To hear and talk, install the &aSimple Voice Chat &7mod (Fabric, 26.3):"
                 - "&bhttps://modrinth.com/mod/simple-voice-chat"
                 - "&7Easiest: get the &fModrinth App &7(modrinth.com/app), search &fSimple Voice Chat&7, click &fInstall&7, play that profile."
+                - "&7Everyone is auto-joined to the &fEveryone &7voice group, so you hear all players anywhere."
                 - "&7In game: &fV &7= settings, &fCaps Lock &7= push-to-talk, &fG &7= groups."
         Join:
           1:
@@ -95,3 +99,14 @@ configs:
               1:
                 - "&6&l[Voice] &7Proximity voice chat is on. No voice? Get the &aSimple Voice Chat &7mod:"
                 - "&bhttps://modrinth.com/mod/simple-voice-chat &7(press &fV &7in game)"
+
+  voiceserver-config:
+    content: |
+      chat-prefix: "§7[§9Voice§7]"
+      debug: false
+      persistent-groups-should-survive-restart: true
+      persistent-groups:
+        - "Everyone+open+[null]"
+      default-group:
+        name: "Everyone"
+        persistent: true
