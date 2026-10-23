@@ -87,9 +87,8 @@ configs:
             Messages:
               1:
                 - "&6&l[Voice] &eThis server has PROXIMITY VOICE CHAT!"
-                - "&7To hear and talk, install the &aSimple Voice Chat &7mod (Fabric, 26.3):"
-                - "&bhttps://modrinth.com/mod/simple-voice-chat"
-                - "&7Easiest: get the &fModrinth App &7(modrinth.com/app), search &fSimple Voice Chat&7, click &fInstall&7, play that profile."
+                - "&7To hear and talk, run the one-click setup (Windows or Mac):"
+                - "&bhttps://github.com/pronnmark/minecraft-server#join"
                 - "&7Everyone is auto-joined to the &fEveryone &7voice group, so you hear all players anywhere."
                 - "&7In game: &fV &7= settings, &fCaps Lock &7= push-to-talk, &fG &7= groups."
         Join:
@@ -97,8 +96,8 @@ configs:
             Permission: cjm.default
             Messages:
               1:
-                - "&6&l[Voice] &7Proximity voice chat is on. No voice? Get the &aSimple Voice Chat &7mod:"
-                - "&bhttps://modrinth.com/mod/simple-voice-chat &7(press &fV &7in game)"
+                - "&6&l[Voice] &7Proximity voice chat is on. No voice? One-click setup:"
+                - "&bhttps://github.com/pronnmark/minecraft-server#join &7(press &fV &7in game)"
 
   voiceserver-config:
     content: |

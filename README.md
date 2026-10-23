@@ -1,5 +1,14 @@
 # minecraft-server
 
+## Join
+
+- **Windows:** download [Join-Grisch-Windows.bat](https://github.com/pronnmark/minecraft-server/releases/latest/download/Join-Grisch-Windows.bat) and double-click it. "Windows protected your PC" → **More info → Run anyway**.
+- **Mac:** paste in Terminal: `curl -fsSL https://github.com/pronnmark/minecraft-server/releases/latest/download/join-mac.sh | sh`
+
+Then press **Play** in the Minecraft Launcher (the **Grisch** profile is picked) → **Multiplayer** → **Grisch**. Voice chat and the in-game terminal (press K) come with it. Needs the official Minecraft Launcher, signed in and opened once; your normal Minecraft is not changed.
+
+Update the files: `client/release.sh` (pins the newest 26.3 Fabric API, Simple Voice Chat and [minecraft-terminal](https://github.com/pronnmark/minecraft-terminal) with SHA-512s and publishes a release).
+
 Production-ready Minecraft Java Edition server running on pbox via Docker Compose.
 
 - **Engine:** PaperMC (high-performance vanilla-compatible Java Edition)

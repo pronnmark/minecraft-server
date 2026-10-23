@@ -6,3 +6,4 @@ data/
 
 # Environment secrets
 .env
+client/dist/
