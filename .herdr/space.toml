@@ -1,0 +1,3 @@
+# herdr space settings for this repo. Read by herdr-space-emoji (pbox-config).
+# icon: one wide emoji, single codepoint (no U+FE0F), shown before the space name.
+icon = "🧱"
