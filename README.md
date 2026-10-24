@@ -2,10 +2,24 @@
 
 ## Join
 
-- **Windows:** download [Join-Grisch-Windows.bat](https://github.com/pronnmark/minecraft-server/releases/latest/download/Join-Grisch-Windows.bat) and double-click it. "Windows protected your PC" → **More info → Run anyway**.
-- **Mac:** paste in Terminal: `curl -fsSL https://github.com/pronnmark/minecraft-server/releases/latest/download/join-mac.sh | sh`
+**Windows:** press **Win+R**, paste this, press Enter:
 
-Then press **Play** in the Minecraft Launcher (the **Grisch** profile is picked) → **Multiplayer** → **Grisch**. Voice chat and the in-game terminal (press K) come with it. Needs the official Minecraft Launcher, signed in and opened once; your normal Minecraft is not changed.
+```
+powershell -c "irm https://github.com/pronnmark/minecraft-server/releases/latest/download/join-windows.ps1 | iex"
+```
+
+**Mac:** open **Terminal**, paste this, press Enter:
+
+```
+curl -fsSL https://github.com/pronnmark/minecraft-server/releases/latest/download/join-mac.sh | sh
+```
+
+Sign in when the Minecraft Launcher asks, then press **Play**. You land on the server.
+
+- Installs the official Minecraft Launcher if it is missing, and waits for you to sign in.
+- Needs a Microsoft account that owns **Minecraft Java Edition**.
+- Voice chat (V) and the in-game terminal (K) come with it. Your normal Minecraft is not changed.
+- Prefer a file? [Join-Grisch-Windows.bat](https://github.com/pronnmark/minecraft-server/releases/latest/download/Join-Grisch-Windows.bat) does the same (Windows SmartScreen: **More info → Run anyway**).
 
 Update the files: `client/release.sh` (pins the newest 26.3 Fabric API, Simple Voice Chat and [minecraft-terminal](https://github.com/pronnmark/minecraft-terminal) with SHA-512s and publishes a release).
 
